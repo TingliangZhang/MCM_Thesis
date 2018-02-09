@@ -82,6 +82,22 @@ The proof of theorem.
 
 \section{Analysis of the Problem}
 
+\subsection {Location Model} 
+
+
+      Let's consider such a transportation network, in which each electric vehicle is driven from a starting point to a destination. Due to the limits of its maximum battery capacity and mileage, vehicles must be charged on the way, or it can’t finish the whole trip. It is necessary to build sufficient charging stations on the road to meet charging requirements. This article introduces a new factor , the service capacity,  which refers to the amount of electricity one station can provide within a day.  In this article, service capacity is divided into two parts, which are divided into the number of charged piles and the electricity distribution of a charging station.
+
+Our model meets the following conditions. First, the vehicle reaches the destination along the shortest route of the road. Second, the maximum driving range  of a vehicle is a constant number; The electric power dissipation and filling capacity of the vehicle has a linear relationship with the driving distance. Third, the car is not required to be fully charged, as long as the whole trip can be completed. Each motor vehicle can start with a half of the total charge.
+
+
+\begin{figure}[h]
+\small
+\centering
+\includegraphics[width=12cm]{OD.png}
+\caption{O-D Model} 
+\end{figure}
+
+
 \[
 \min Z=\sum _{i\in S}C_{i}X_{i} + \sum _{i\in S}P_{i}Q_{i} + \sum _{i\in S}w_{i}Q\left( I_{i}\right)
 \]
