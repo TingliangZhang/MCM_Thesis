@@ -1,5 +1,15 @@
-A = xlsread('LocationUSA.xlsx');
+X = xlsread('LocationUSA.xlsx','A1:A549');
+Y = xlsread('LocationUSA.xlsx','B1:B549');
+Z = xlsread('USA.xlsx','G2:G550');
+hold on;
 
-A = xlsread(''，'工作表名称','a1:c1')
-voronoi(A);
 
+%voronoi(X,Y);
+
+xlim([min(X) max(X)])
+ylim([min(Y) max(Y)])
+
+[vx,vy] = voronoi(X,Y);
+[v,c] = voronoin([X(:) Y(:)]);
+plot(vx,vy,Z,'r-o');
+hold off;
