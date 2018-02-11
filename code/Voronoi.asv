@@ -1,0 +1,5 @@
+A = xlsread('LocationUSA.xlsx');
+
+A = xlsread(''，'工作表名称','a1:c1')
+voronoi(A);
+
