@@ -13,7 +13,7 @@ for t = 1:549
     
 end
 
-axis equal
+%axis equal
 grid on
 
 %axis off;
