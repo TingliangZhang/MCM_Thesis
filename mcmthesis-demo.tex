@@ -52,100 +52,7 @@ With the rapid development of the automobile industry, the problems caused by au
    
    Therefore, this paper mainly focuses on the two aspects of location and convenience to formulate relevant policies to support the full adoption of electric vehicles.
 
-\section{Task 1}
-
-First, let's explore the current U.S. Tesla charging network. Tesla currently offers two types of charging stations
-
-
-\begin{itemize}
-\item destination charging designed for charging for several hours at a time or even overnight.
-\item supercharging designed for longer road trips to provide up to 170 miles of range in as little as 30 minutes of charging.
-\end{itemize}
-
-In order to study whether Tesla is on an all-electric road, we use matlab to get the following figure based on the relevant database.
-
-\begin{figure}[H]
-\small
-\centering
-\includegraphics[width=16cm]{USAVoronoiMap.eps}
-\caption{USA Voronoi Map} 
-\end{figure}
-
-In our understanding, this issue mainly involves two angles:
-
-\begin{itemize}
-\item Comparison of vehicle sales and electric vehicle growth
-\item The changes of Charging pile number whether can keep up with the sales of vehicles
-\end{itemize}
-
-\begin{figure}[htbp]
-\small
-\centering
-\includegraphics[width=14cm]{EVandChargers.eps}
-\caption{EVandChargers} 
-\end{figure}
-
-It can be seen from the trend of two curves that the number of charging poles can keep up with the number of electric vehicles.
-
-
-
-
-\emph{center of percussion} [Brody 1986], 
-
-\begin{Theorem} \label{thm:latex} %定理
-\LaTeX
-\end{Theorem}
-\begin{Lemma} \label{thm:tex}  %引理
-\TeX .
-\end{Lemma}
-\begin{proof}
-The proof of theorem.
-\end{proof}
-
-\subsection{Other Assumptions}  %假设
-
-\begin{itemize}
-\item
-\item
-\item
-\item
-\end{itemize}
-
-
-\section{Analysis of the Problem}
-
-\subsection {Location Model} 
-
-
-      Let's consider such a transportation network, in which each electric vehicle is driven from a starting point to a destination. Due to the limits of its maximum battery capacity and mileage, vehicles must be charged on the way, or it can’t finish the whole trip. It is necessary to build sufficient charging stations on the road to meet charging requirements. This article introduces a new factor , the service capacity,  which refers to the amount of electricity one station can provide within a day.  In this article, service capacity is divided into two parts, which are divided into the number of charged piles and the electricity distribution of a charging station.
-
-Our model meets the following conditions. First, the vehicle reaches the destination along the shortest route of the road. Second, the maximum driving range  of a vehicle is a constant number; The electric power dissipation and filling capacity of the vehicle has a linear relationship with the driving distance. Third, the car is not required to be fully charged, as long as the whole trip can be completed. Each motor vehicle can start with a half of the total charge.
-
-
-\begin{figure}[htbp]
-\small
-\centering
-\includegraphics[width=14cm]{EVnum.eps}
-\caption{EVnum} 
-\end{figure}
-
-\begin{figure}[htbp]
-\small
-\centering
-\includegraphics[width=14cm]{Superchargers.eps}
-\caption{Superchargers} 
-\end{figure}
-
-
-\begin{figure}[htbp]
-\small
-\centering
-\includegraphics[width=18cm]{circular.eps}
-\caption{Circular} 
-\end{figure}
-
-
-
+Here are the compare of Super Charger and Destiny Charger:
 
 \begin{table}[!htbp]
 \centering
@@ -155,7 +62,7 @@ Our model meets the following conditions. First, the vehicle reaches the destina
 \hline
 cost&1000k&50k\\
 \hline
-price& 1.8Yuan/kWh& 1.0Yuan/kWh\\
+price& 1.8RMB/kWh& 1.0RMB/kWh\\
 \hline
 time& 30min~1.5h& 6h\\
 \hline
@@ -164,14 +71,6 @@ method&FAST &SLOW \\
 \end{tabular}
 \caption{Compare}
 \end{table}
-
-\begin{figure}[htbp]
-\small
-\centering
-\includegraphics[width=12cm]{OD.png}
-\caption{O-D Model} 
-\end{figure}
-
 
 \begin{figure}[htbp]
 \small
@@ -196,17 +95,88 @@ method&FAST &SLOW \\
 \caption{Open Superchargers Stall Globally} 
 \end{figure}
 
-\[
-\min Z=\sum _{i\in S}C_{i}X_{i} + \sum _{i\in S}P_{i}Q_{i} + \sum _{i\in S}w_{i}Q\left( I_{i}\right)
-\]
 
-\[	
-\sum _{m\in M}f_{m}R_{im} \leq Q\left( I_{i}\right)
-\]
+\section{Analysis of the Problem}
 
-\[
-i\rightarrow j\rightarrow k
-\]
+\subsection {Location Model} 
+
+ Let's consider such a transportation network, in which each electric vehicle is driven from a starting point to a destination. Due to the limits of its maximum battery capacity and mileage, vehicles must be charged on the way, or it can’t finish the whole trip. It is necessary to build sufficient charging stations on the road to meet charging requirements. This article introduces a new factor , the service capacity,  which refers to the amount of electricity one station can provide within a day.  In this article, service capacity is divided into two parts, which are divided into the number of charged piles and the electricity distribution of a charging station.
+
+Our model meets the following conditions. First, the vehicle reaches the destination along the shortest route of the road. Second, the maximum driving range  of a vehicle is a constant number; The electric power dissipation and filling capacity of the vehicle has a linear relationship with the driving distance. Third, the car is not required to be fully charged, as long as the whole trip can be completed. Each motor vehicle can start with a half of the total charge.
+
+\begin{figure}[htbp]
+\small
+\centering
+\includegraphics[width=12cm]{OD.png}
+\caption{O-D Model} 
+\end{figure}
+
+
+\section{Task 1}
+
+First, let's explore the current U.S. Tesla charging network. Tesla currently offers two types of charging stations
+
+
+\begin{itemize}
+\item destination charging designed for charging for several hours at a time or even overnight.
+\item supercharging designed for longer road trips to provide up to 170 miles of range in as little as 30 minutes of charging.
+\end{itemize}
+
+In order to study whether Tesla is on an all-electric road, we use matlab to get the following figure based on the relevant database.
+
+\begin{figure}[H]
+\small
+\centering
+\includegraphics[width=16cm]{USAVoronoiMap.eps}
+\caption{USA Voronoi Map} 
+\end{figure}
+
+\begin{figure}[htbp]
+\small
+\centering
+\includegraphics[width=18cm]{circular.eps}
+\caption{USA Circular Map} 
+\end{figure}
+
+
+In our understanding, this issue mainly involves two angles:
+
+\begin{itemize}
+\item Comparison of vehicle sales and electric vehicle growth
+\item The changes of Charging pile number whether can keep up with the sales of vehicles
+\end{itemize}
+
+
+It can be seen from the trend of two curves that the number of charging poles can keep up with the number of electric vehicles.
+
+
+\begin{figure}[htbp]
+\small
+\centering
+\includegraphics[width=14cm]{EVnum.eps}
+\caption{EVnum} 
+\end{figure}
+
+\begin{figure}[htbp]
+\small
+\centering
+\includegraphics[width=14cm]{Superchargers.eps}
+\caption{Super chargers} 
+\end{figure}
+
+
+\begin{figure}[H]
+\small
+\centering
+\includegraphics[width=14cm]{EVandChargers.eps}
+\caption{EV and Chargers} 
+\end{figure}
+
+\section{Task 2}
+
+\section{Task 3}
+
+
 
 \section{Task 4}
 
