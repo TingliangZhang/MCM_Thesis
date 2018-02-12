@@ -1,5 +1,5 @@
-X = xlsread('LocationUSA.xlsx','A1:A549');
-Y = xlsread('LocationUSA.xlsx','B1:B549');
+Y = xlsread('LocationUSA.xlsx','A1:A549');
+X = xlsread('LocationUSA.xlsx','B1:B549');
 Z = xlsread('USA.xlsx','G2:G550');
 hold on;
 
