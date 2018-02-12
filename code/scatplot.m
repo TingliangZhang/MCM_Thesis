@@ -61,7 +61,7 @@ if nargin==0
     scatplotdemo
     return
 end
-if nargin<3 | isempty(method)
+if nargin<3 || isempty(method)
     method = 'vo';
 end
 if isnumeric(method)
@@ -70,16 +70,16 @@ if isnumeric(method)
 else
     method = method(1:2);
 end
-if nargin<4 | isempty(n)
+if nargin<4 || isempty(n)
     n = 5; %number of filter coefficients
 end
-if nargin<5 | isempty(radius)
+if nargin<5 || isempty(radius)
     radius = sqrt((range(x)/30)^2 + (range(y)/30)^2);
 end
-if nargin<6 | isempty(po)
+if nargin<6 || isempty(po)
     po = 1; %plot option
 end
-if nargin<7 | isempty(ms)
+if nargin<7 || isempty(ms)
     ms = 4; %markersize
 end
 if nargin<8 | isempty(N)
@@ -162,7 +162,7 @@ ms = 5;
 x = randn(1000,1);
 y = randn(1000,1);
 
-out = scatplot(x,y,method,radius,N,n,po,ms)
+out = scatplot(x,y,method,radius,N,n,po,ms);
 
 return
 %~~~~~~~~~~ Data Density ~~~~~~~~~~~~~~
