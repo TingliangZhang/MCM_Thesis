@@ -9,13 +9,10 @@ for t = 1:549
     d=0:360;
     x=r*cosd(d);
     y=r*sind(d);
-    patch(x+x0,y+y0,'b','edgecolor','none','facealpha',0.1);%不透明度0.15
-    
+    patch(x+x0,y+y0,'b','edgecolor','none','facealpha',0.1);%不透明度0.15  
 end
-
 %axis equal
 grid on
-
 %axis off;
 set(gcf,'color','w');
 
